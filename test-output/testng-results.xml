@@ -2,28 +2,28 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-08-23T12:31:25Z" name="Suite" finished-at="2020-08-23T12:31:47Z" duration-ms="21756">
+  <suite started-at="2020-08-24T01:50:48Z" name="Suite" finished-at="2020-08-24T01:51:10Z" duration-ms="22434">
     <groups>
     </groups>
-    <test started-at="2020-08-23T12:31:25Z" name="Test" finished-at="2020-08-23T12:31:47Z" duration-ms="21756">
+    <test started-at="2020-08-24T01:50:48Z" name="Test" finished-at="2020-08-24T01:51:10Z" duration-ms="22434">
       <class name="com.projectname.tests.Test_001">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.projectname.tests.Test_001@782859e]" started-at="2020-08-23T22:31:25Z" name="beforeSuite" finished-at="2020-08-23T22:31:25Z" duration-ms="890" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.projectname.tests.Test_001@7e990ed7]" started-at="2020-08-24T11:50:46Z" name="beforeSuite" finished-at="2020-08-24T11:50:48Z" duration-ms="1351" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeEveryTestStarts()[pri:0, instance:com.projectname.tests.Test_001@782859e]" started-at="2020-08-23T22:31:26Z" name="beforeEveryTestStarts" finished-at="2020-08-23T22:31:44Z" duration-ms="18634" status="PASS">
+        <test-method is-config="true" signature="beforeEveryTestStarts()[pri:0, instance:com.projectname.tests.Test_001@7e990ed7]" started-at="2020-08-24T11:50:48Z" name="beforeEveryTestStarts" finished-at="2020-08-24T11:51:06Z" duration-ms="17973" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeEveryTestStarts -->
-        <test-method signature="tcase1()[pri:0, instance:com.projectname.tests.Test_001@782859e]" started-at="2020-08-23T22:31:44Z" name="tcase1" finished-at="2020-08-23T22:31:45Z" duration-ms="816" status="PASS">
+        <test-method signature="tcase1()[pri:0, instance:com.projectname.tests.Test_001@7e990ed7]" started-at="2020-08-24T11:51:06Z" name="tcase1" finished-at="2020-08-24T11:51:07Z" duration-ms="1579" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tcase1 -->
-        <test-method is-config="true" signature="afterEveryTestEnds(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.projectname.tests.Test_001@782859e]" started-at="2020-08-23T22:31:45Z" name="afterEveryTestEnds" finished-at="2020-08-23T22:31:47Z" duration-ms="2290" status="PASS">
+        <test-method is-config="true" signature="afterEveryTestEnds(org.testng.ITestResult, java.lang.reflect.Method)[pri:0, instance:com.projectname.tests.Test_001@7e990ed7]" started-at="2020-08-24T11:51:07Z" name="afterEveryTestEnds" finished-at="2020-08-24T11:51:10Z" duration-ms="2867" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=tcase1 status=SUCCESS method=Test_001.tcase1()[pri:0, instance:com.projectname.tests.Test_001@782859e] output={null}]]]>
+                <![CDATA[[TestResult name=tcase1 status=SUCCESS method=Test_001.tcase1()[pri:0, instance:com.projectname.tests.Test_001@7e990ed7] output={null}]]]>
               </value>
             </param>
             <param index="1">
