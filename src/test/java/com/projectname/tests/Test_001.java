@@ -17,7 +17,7 @@ public class Test_001 extends BaseTestSuite {
 		register.enterUsername();
 		register.enterPassword();
 		register.enterEmail();
-		
+		System.out.println("changes by vishal");	
 	}
 	
 	/*@Test
