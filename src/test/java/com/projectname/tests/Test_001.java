@@ -3,6 +3,8 @@ import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.Test;
+import org.web.auotmation.pages.LoginPage;
+
 import com.projectname.baseclass.BaseTestSuite;
 import com.projectname.pages.PageName;
 import com.projectname.pages.RegistrationPage;
@@ -12,20 +14,22 @@ public class Test_001 extends BaseTestSuite {
 
 	@Test
 	public void tcase1() {
-		testLog = extent.startTest(this.getClass().getSimpleName());
-		RegistrationPage register = PageFactory.initElements(driver, RegistrationPage.class);
-		register.enterUsername();
-		register.enterPassword();
-		register.enterEmail();
-		System.out.println("changes by vishal");	
-		System.out.println("updated");
-		System.out.println("Phil's changes #2");
-		System.out.println("vishal changes 28");
-		System.out.println("vishal changes 29");
-		System.out.println("Phil's changes 28!");
-		System.out.println("New changes on feature branch");
-		System.out.println("New changes for develop branch");
-    System.out.println("Phil's change 3.14");
+//		testLog = extent.startTest(this.getClass().getSimpleName());
+//		RegistrationPage register = PageFactory.initElements(driver, RegistrationPage.class);
+//		register.enterUsername();
+//		register.enterPassword();
+//		register.enterEmail();
+//		System.out.println("changes by vishal");	
+//		System.out.println("updated");
+//		System.out.println("Phil's changes #2");
+//		System.out.println("vishal changes 28");
+//		System.out.println("vishal changes 29");
+//		System.out.println("Phil's changes 28!");
+//		System.out.println("New changes on feature branch");
+//		System.out.println("New changes for develop branch");
+//		System.out.println("Phil's change 3.14");
+//		System.out.println("copy across");
+		
 
 
 	}
