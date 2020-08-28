@@ -36,7 +36,7 @@ public class HomePage {
 		try {
 			//Thread.sleep(2000);
 			booksLink.click();
-			testLog.log(LogStatus.INFO, "Clicked Books linkPP inn categories");
+			testLog.log(LogStatus.INFO, "Clicked Books link in categories");
 		} catch (Exception e) {
 			Assert.fail("Unable to click Books link under categories");
 		}

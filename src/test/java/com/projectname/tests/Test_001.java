@@ -2,36 +2,36 @@ package com.projectname.tests;
 import static org.testng.Assert.assertEquals;
 
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.web.auotmation.pages.LoginPage;
+import com.projectname.pages.LoginPage;
 
 import com.projectname.baseclass.BaseTestSuite;
+import com.projectname.pages.BooksPage;
+import com.projectname.pages.HomePage;
 import com.projectname.pages.PageName;
 import com.projectname.pages.RegistrationPage;
 import com.projectname.pages.SecondPageName;
+import com.relevantcodes.extentreports.LogStatus;
 
 public class Test_001 extends BaseTestSuite {
 
 	@Test
 	public void tcase1() {
-//		testLog = extent.startTest(this.getClass().getSimpleName());
-//		RegistrationPage register = PageFactory.initElements(driver, RegistrationPage.class);
-//		register.enterUsername();
-//		register.enterPassword();
-//		register.enterEmail();
-//		System.out.println("changes by vishal");	
-//		System.out.println("updated");
-//		System.out.println("Phil's changes #2");
-//		System.out.println("vishal changes 28");
-//		System.out.println("vishal changes 29");
-//		System.out.println("Phil's changes 28!");
-//		System.out.println("New changes on feature branch");
-//		System.out.println("New changes for develop branch");
-//		System.out.println("Phil's change 3.14");
-//		System.out.println("copy across");
-		
-
-
+		testLog = extent.startTest(this.getClass().getSimpleName());
+		String[][] logindata = excelData.readData("LoginPage");
+		LoginPage login = new LoginPage(driver, testLog);
+		PageFactory.initElements(driver, login);
+		login.clickLoginLink();
+		testLog.log(LogStatus.INFO, testLog.addScreenCapture(createScreenshot()));
+		login.enterEmail("vuppal@gmail.com");
+		testLog.log(LogStatus.INFO, testLog.addScreenCapture(createScreenshot()));
+		login.enterPassword("test123");
+		testLog.log(LogStatus.INFO, testLog.addScreenCapture(createScreenshot()));
+		HomePage home=login.clickOnLoginButton();
+		testLog.log(LogStatus.INFO, testLog.addScreenCapture(createScreenshot()));
+        System.out.println("reached here");
+		BooksPage bookspage=home.clickBooksLinkUnderCategories();
 	}
 	
 	/*@Test
