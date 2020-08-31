@@ -39,6 +39,9 @@ public class Test_001 extends BaseTestSuite {
 		ProductPage product = bookspage.clickOnSelectedProduct();
 		product.clickAddToCartButton();
 		product.hoverShoppingCart();
+		
+		System.out.println("testing feature branch3003 Phil confilct test");
+		
 		ShoppingCartPage shoppingcart = product.clickGoToCart();
 		shoppingcart.clickTermsOfServiceCheckbox();
 		CheckoutPage checkout = shoppingcart.clickCheckoutButton();
@@ -49,11 +52,17 @@ public class Test_001 extends BaseTestSuite {
 		checkout.clickpaymentinformationcontinuebutton();
 		OrderVerificationPage orderverify = checkout.clickconfirmordercontinuebutton();
 		orderverify.clickLogOutLick();
+		System.out.println("testing feature conflict");
+		System.out.println("testing feature pull");
+		System.out.println("testing feature test");
 		System.out.println("testing feature branch");
 		System.out.println("testing feature branch2");
+		System.out.println("testing feature branch9999");
 		System.out.println("testing feature branch3003");
 		System.out.println("testing feature branch3005 vishal");
 		System.out.println("testing feature branch3007 vishal");
+		System.out.println("testing feature branch3006 vishal");
+
 		
 
 		//Fin
