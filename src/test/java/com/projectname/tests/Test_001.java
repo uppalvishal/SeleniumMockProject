@@ -52,6 +52,9 @@ public class Test_001 extends BaseTestSuite {
 		checkout.clickpaymentinformationcontinuebutton();
 		OrderVerificationPage orderverify = checkout.clickconfirmordercontinuebutton();
 		orderverify.clickLogOutLick();
+		System.out.println("testing feature conflict");
+		System.out.println("testing feature pull");
+		System.out.println("testing feature test");
 		System.out.println("testing feature branch");
 		System.out.println("testing feature branch2");
 		System.out.println("testing feature branch9999");
