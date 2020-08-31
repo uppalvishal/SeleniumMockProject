@@ -49,6 +49,7 @@ public class Test_001 extends BaseTestSuite {
 		checkout.clickpaymentinformationcontinuebutton();
 		OrderVerificationPage orderverify = checkout.clickconfirmordercontinuebutton();
 		orderverify.clickLogOutLick();
+		System.out.println("testing feature branch");
 		//Fin
          
 	}
