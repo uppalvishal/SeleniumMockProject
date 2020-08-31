@@ -39,6 +39,9 @@ public class Test_001 extends BaseTestSuite {
 		ProductPage product = bookspage.clickOnSelectedProduct();
 		product.clickAddToCartButton();
 		product.hoverShoppingCart();
+		
+		System.out.println("testing feature branch3003 Phil confilct test");
+		
 		ShoppingCartPage shoppingcart = product.clickGoToCart();
 		shoppingcart.clickTermsOfServiceCheckbox();
 		CheckoutPage checkout = shoppingcart.clickCheckoutButton();
@@ -52,6 +55,7 @@ public class Test_001 extends BaseTestSuite {
 		System.out.println("testing feature branch");
 		System.out.println("testing feature branch2");
 		System.out.println("testing feature branch3003");
+		
 		
 
 		//Fin
