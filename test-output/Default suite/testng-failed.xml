@@ -3,14 +3,14 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.projectname.tests.TC_001">
+      <class name="com.projectname.tests.Test_001">
         <methods>
           <include name="beforeEveryTestStarts"/>
           <include name="afterEveryTestEnds"/>
           <include name="beforeSuite"/>
           <include name="tcase1"/>
         </methods>
-      </class> <!-- com.projectname.tests.TC_001 -->
+      </class> <!-- com.projectname.tests.Test_001 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

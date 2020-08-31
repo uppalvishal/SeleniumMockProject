@@ -44,6 +44,32 @@ public class HomePage {
 		PageFactory.initElements(driver, bookspage);
 		return bookspage;
 	}
+	
+	public ElectronicsPage clickElectroncsLinkUnderCategories() {
+		try {
+			//Thread.sleep(2000);
+			electronicsLink.click();
+			testLog.log(LogStatus.INFO, "Clicked Electronics link in categories");
+		} catch (Exception e) {
+			Assert.fail("Unable to click Electronics link under categories");
+		}
+		ElectronicsPage electronicspage = new ElectronicsPage(driver, testLog);
+		PageFactory.initElements(driver, electronicspage);
+		return electronicspage;
+	}
+	
+	public ApparelAndShoesPage clickApparealAndShoesLinkUnderCategories() {
+		try {
+			//Thread.sleep(2000);
+			apparelandshoesLink.click();
+			testLog.log(LogStatus.INFO, "Clicked Books link in categories");
+		} catch (Exception e) {
+			Assert.fail("Unable to click Books link under categories");
+		}
+		ApparelAndShoesPage apparelandshoes = new ApparelAndShoesPage(driver, testLog);
+		PageFactory.initElements(driver, apparelandshoes);
+		return apparelandshoes;
+	}
 
 	
 }

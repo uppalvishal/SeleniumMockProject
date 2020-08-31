@@ -17,6 +17,10 @@ import com.relevantcodes.extentreports.LogStatus;
 
 public class ShoppingCartPage {
 		
+	@FindBy(xpath = "//span[@class='product-price order-total']") WebElement totalPrice;
+	@FindBy(id = "termsofservice") WebElement termsOfSerivceCheckbox;
+	@FindBy(xpath = "//button[@id='checkout']") WebElement checkoutButton;
+	
 	private WebDriver driver;
 	private ExtentTest testLog;
 
@@ -24,4 +28,19 @@ public class ShoppingCartPage {
 		this.driver = driver;
 		this.testLog = testLog;
 	}
+	
+	/*
+	 * #### Add method that verifies total values
+	 */
+	public void clickTermsOfServiceCheckbox() {
+		termsOfSerivceCheckbox.click();
+	}
+	
+	public CheckoutPage clickCheckoutButton() {
+		checkoutButton.click();
+		CheckoutPage checkout = new CheckoutPage(driver, testLog);
+		PageFactory.initElements(driver, checkout);
+		return checkout;
+	}
+	
 }

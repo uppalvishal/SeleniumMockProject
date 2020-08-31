@@ -73,7 +73,7 @@ public class BaseTestSuite {
 		}
 		extent.endTest(testLog);
 		extent.flush();
-		driver.quit();
+		//driver.quit();
 	}
 
 	public String createScreenshot() {
