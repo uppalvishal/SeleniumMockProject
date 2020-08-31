@@ -55,7 +55,10 @@ public class Test_001 extends BaseTestSuite {
 		System.out.println("testing feature conflict");
 		System.out.println("testing feature pull");
 		System.out.println("testing feature test");
-		
+		System.out.println("testing feature branch");
+		System.out.println("testing feature branch2");
+		System.out.println("testing feature branch9999");
+
 		
 		
 
