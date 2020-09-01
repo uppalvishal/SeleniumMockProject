@@ -1,10 +1,18 @@
 package com.projectname.tests;
 import static org.testng.Assert.assertEquals;
 
+import java.util.List;
+
+import org.apache.commons.lang3.StringUtils;
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByClassName;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import com.projectname.pages.LoginPage;
+import com.projectname.pages.OrderInformationPage;
 import com.projectname.pages.OrderVerificationPage;
 import com.projectname.baseclass.BaseTestSuite;
 import com.projectname.pages.ApparelAndShoesPage;
@@ -21,7 +29,7 @@ import com.relevantcodes.extentreports.LogStatus;
 public class Test_001 extends BaseTestSuite {
 
 	@Test
-	public void tcase1() {
+	public void tcase1() throws InterruptedException {
 		testLog = extent.startTest(this.getClass().getSimpleName());
 		String[][] logindata = excelData.readData("LoginPage");
 		LoginPage login = new LoginPage(driver, testLog);
@@ -34,15 +42,32 @@ public class Test_001 extends BaseTestSuite {
 		testLog.log(LogStatus.INFO, testLog.addScreenCapture(createScreenshot()));
 		HomePage home=login.clickOnLoginButton();
 		testLog.log(LogStatus.INFO, testLog.addScreenCapture(createScreenshot()));
-        System.out.println("reached here");
+		
+		//Reset cart to 0 item count
+		ShoppingCartPage shoppingcart = home.clickGoToCart();
+		shoppingcart.resetShoppingCart();
+		
+		//Assertion #1
+		Assert.assertEquals(home.shoppingCartQuantity(), "0", "Shopping cart before adding product is not empty");
+		
 		BooksPage bookspage = home.clickBooksLinkUnderCategories();
 		ProductPage product = bookspage.clickOnSelectedProduct();
 		product.clickAddToCartButton();
+		Thread.sleep(3500);//wait for cart to update before next step
+		
+		//Assertion #2
+		Assert.assertEquals(home.shoppingCartQuantity(), "1", "Cart product count is incorrect");
+		
 		product.hoverShoppingCart();
+		shoppingcart = product.clickGoToCart();
 		
-		System.out.println("testing feature branch3003 Phil confilct test");
+		//Assertion #3
+		Assert.assertEquals(shoppingcart.verifyShoppingCartSubTotal(), true, "Sub totals of products do not match");
 		
-		ShoppingCartPage shoppingcart = product.clickGoToCart();
+		//Assertion #4
+		Assert.assertEquals(shoppingcart.verifyShoppingCartPageTotals(), true, "Sub total does not match total");
+		
+		
 		shoppingcart.clickTermsOfServiceCheckbox();
 		CheckoutPage checkout = shoppingcart.clickCheckoutButton();
 		checkout.clickbillingaddresscontinuebutton();
@@ -51,32 +76,32 @@ public class Test_001 extends BaseTestSuite {
 		checkout.clickpaymentmethodscontinuebutton();
 		checkout.clickpaymentinformationcontinuebutton();
 		OrderVerificationPage orderverify = checkout.clickconfirmordercontinuebutton();
-		orderverify.clickLogOutLick();
-		System.out.println("testing feature conflict");
-		System.out.println("testing feature pull");
-		System.out.println("testing feature test");
-		System.out.println("testing feature branch");
-		System.out.println("testing feature branch2");
-		System.out.println("testing feature branch9999");
-
+		String verificationPageOrderNumber = orderverify.getVerificationPageOrderNumber();
+		OrderInformationPage orderInfoPage = orderverify.clickOrderDetailsLink();
 		
+		//Assertion #5
+		Assert.assertEquals(orderInfoPage.getOrderNumber(), verificationPageOrderNumber, "Order numbers do not match");
 		
+		Thread.sleep(3500);
+		orderverify.clickLogOutLink();
 
-		//Fin
-         
-	}
+		//End of TC_001
+		}
 	
-	/*@Test
-	public void tcase2() {
-			//this is on facebook, make sure to change url in properties
-		testLog = extent.startTest(this.getClass().getSimpleName());
-		String[][] data = excelData.readData("LoginPage");
-		PageName pageClassName = new PageName(driver, testLog);
-		PageFactory.initElements(driver, pageClassName);
-		pageClassName.enterUserName(data[0][0]);
-		SecondPageName secondPageName = pageClassName.clickOnLoginButton();
-		assertEquals("Forgotten password?", secondPageName.verifyForgottenPassword());
-	}*/
-	
-	
+//	public void resetShoppingCart(HomePage home) {
+//		ShoppingCartPage shoppingcartpage = home.clickShoppingCartLink();
+//		WebElement table = shoppingcartpage.getProductsTbl();
+//
+//		// get all rows
+//		List < WebElement > rows_table = table.findElements(By.tagName("tr"));
+//		int rows_count = rows_table.size();
+//		//Loop will execute till the last row of table.
+//		for (int row = 0; row < rows_count; row++) { 
+//			// iterate through the rows
+//			// get the rowCells in each row
+//			driver.findElement(By.xpath("(//*[@class='remove-from-cart'])["+(row+1)+"]/span/following-sibling::input")).click();
+//		}
+//	
+//	
+//}
 }
