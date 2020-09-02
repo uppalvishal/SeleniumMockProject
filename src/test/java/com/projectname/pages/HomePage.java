@@ -17,7 +17,8 @@ public class HomePage {
 	@FindBy(xpath="//div[@class='block block-category-navigation']/div[2]/ul/li[1]/a") WebElement booksLink;
 	@FindBy(xpath="//div[@class='block block-category-navigation']/div[2]/ul/li[3]/a") WebElement electronicsLink;
 	@FindBy(xpath="//div[@class='block block-category-navigation']/div[2]/ul/li[4]/a") WebElement apparelandshoesLink;
-	@FindBy(xpath="//div[@class='header-links']/ul/li[3]/a") WebElement shoppingCartLink;
+	@FindBy(xpath = "//div[@class='mini-shopping-cart']/div[4]/input[1]") WebElement goToCartLink;
+	@FindBy(xpath="//span[@class='cart-qty']") WebElement shoppingCartQuantity;
 
 	private WebDriver driver;
 	private ExtentTest testLog;
@@ -26,9 +27,17 @@ public class HomePage {
 		this.driver = driver;
 		this.testLog = testLog;
 	}
-
-	public String verifyShoppingcartCountBeforeAddingProduct(){
-		return StringUtils.substringBetween(shoppingCartLink.getText(), "(", ")");
+	
+	
+	public ShoppingCartPage clickGoToCart() {
+		shoppingCartQuantity.click();
+		ShoppingCartPage shoppingcart = new ShoppingCartPage(driver, testLog);
+		PageFactory.initElements(driver, shoppingcart);
+		return shoppingcart;
+	}
+	
+	public String shoppingCartQuantity() {
+		return StringUtils.substringBetween(shoppingCartQuantity.getText(), "(", ")");
 	}
 	
 	
