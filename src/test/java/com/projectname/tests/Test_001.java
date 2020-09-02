@@ -48,7 +48,7 @@ public class Test_001 extends BaseTestSuite {
 		shoppingcart.resetShoppingCart();
 		
 		//Assertion #1
-		Assert.assertEquals(home.shoppingCartQuantity(), "0", "Shopping cart before adding product is not empty");
+		Assert.assertEquals(home.shoppingCartQuantity(), "0", "Shopping cart before adding product is not empty!");
 		
 		BooksPage bookspage = home.clickBooksLinkUnderCategories();
 		ProductPage product = bookspage.clickOnSelectedProduct();
