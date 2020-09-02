@@ -76,6 +76,7 @@ public class Test_001 extends BaseTestSuite {
 		checkout.clickpaymentmethodscontinuebutton();
 		checkout.clickpaymentinformationcontinuebutton();
 		OrderVerificationPage orderverify = checkout.clickconfirmordercontinuebutton();
+
 		String verificationPageOrderNumber = orderverify.getVerificationPageOrderNumber();
 		OrderInformationPage orderInfoPage = orderverify.clickOrderDetailsLink();
 		
@@ -84,6 +85,7 @@ public class Test_001 extends BaseTestSuite {
 		
 		Thread.sleep(3500);
 		orderverify.clickLogOutLink();
+
 
 		//End of TC_001
 		}
